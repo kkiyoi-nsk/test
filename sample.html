@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .content {
+            display: flex;
+            height: calc((100% - 20px) * 0.3);
+            margin: 10px;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            margin: 10px 0;
+            height: 40px;
+        }
+
+        button {
+            background-color: #04005b;
+            color: white;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .contentmain {
+            background-color: #04005b;
+            height: calc(100vh - 270px);
+            width: calc(100% - 60px);
+            margin: 10px;
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+        }
+
+        .contentmain-1 {
+            display: block;
+            background-color: #04005b;
+            width: calc((100% - 60px) * 0.6);
+            height: calc(100vh - 310px);
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        #result-1 {
+            display: flex;
+            background-color: unset;
+            width: calc(100% - 60px);
+        }
+
+        .iframe {
+            width: calc((100% - 60px)* 0.4);
+            height: calc(100vh - 270px);
+            border: 1px solid #eee;
+            margin-left: 20px;
+        }
+
+        #result-2 {
+            display: none;
+        }
+
+        #result-3 {
+            display: none;
+        }
+
+        #result-4 {
+            display: none;
+        }
+
+        #result-5 {
+            display: none;
+        }
+
+        #result-6 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div style="display: flex; height: 150px; width: 100%; margin: 10px 0;">
+            <img src="favicon.ico" style="width: 100px; height: 150px; padding: 0 10px;">
+            <div
+                style="display: flex; background-color: #04005b; color: white; width: 100%; border-radius: 10px; padding: 5px; margin: 0 10px;">
+                <div style="display: block; width: 50%;">
+                    <div class="content">
+                        <p>氏名：</p>
+                        <p>佐藤太郎</p>
+                    </div>
+                    <div class="content">
+                        <p>学校名：</p>
+                        <p>新山大学</p>
+                    </div>
+                    <div class="content">
+                        <p>希望職種：</p>
+                        <p>営業職</p>
+                    </div>
+                </div>
+                <div style="display: block; width: 50%;">
+                    <div class="content">
+                        <p>面接実施日時：</p>
+                        <p>2030年4月1日</p>
+                        <p>18:00~19:11</p>
+                    </div>
+                    <div class="content">
+                        <p>選考状況：</p>
+                        <p>1次面接選考待ち</p>
+                    </div>
+                    <div class="content">
+                        <p>採用条件：</p>
+                        <p>新卒</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="change(1)">履歴書AI所感</button>
+            <button onclick="change(2)">質問内容</button>
+            <button onclick="change(3)">評価グラフ</button>
+            <button onclick="change(4)">面接AI総評</button>
+            <button onclick="change(5)">5評価結果</button>
+        </div>
+        <div class="contentmain" id="result-1">
+            <div class="contentmain-1">
+                <h2>
+                    履歴書AI所感
+                </h2>
+                <p>
+                    この履歴書からは、応募者の真摯な姿勢と明確な目標が伝わってきます。
+                    学業やアルバイトで培ったスキルや知識が具体的に示されており、実績や取り組みがよく整理されています。
+                    特に、プロジェクトやチーム活動でのリーダーシップや協調性のエピソードが印象的で、問題解決能力や積極的な姿勢が見受けられます。
+                    また、自己PRでは、自分の強みや将来のビジョンが具体的に述べられており、企業でどのように貢献できるかがしっかりと伝わってきます。
+                    一方で、特定の業界や職種に対する理解や志望動機がもう少し深掘りされていると、さらに説得力が増すでしょう。
+                    全体として、前向きで自分の成長に対して真剣に取り組んでいる姿勢が感じられ、将来性が期待できる候補者だと思います。
+                </p>
+            </div>
+            <iframe id="pdfFrame" class="iframe" frameborder="0"></iframe>
+
+        </div>
+        <div class="contentmain" id="result-2">
+            <p style="display: flex; height: 100%; width: 100%; align-items: center; justify-content: center; color: white;">
+                質問内容
+            </p>
+        </div>
+        <div class="contentmain" id="result-3">
+            <p style="display: flex; height: 100%; width: 100%; align-items: center; justify-content: center; color: white;">
+                評価グラフ
+            </p>
+        </div>
+        <div class="contentmain" id="result-4">
+            <p style="display: flex; height: 100%; width: 100%; align-items: center; justify-content: center; color: white;">
+                面接AI総評
+            </p>
+        </div>
+        <div class="contentmain" id="result-5">
+            <p style="display: flex; height: 100%; width: 100%; align-items: center; justify-content: center; color: white;">
+                5評価結果
+            </p>
+        </div>
+    </main>
+    <script>
+        //ボタンを押すと表示を切り替える
+        function change(event) {
+            const result = document.getElementById('result-' + event);
+            const results = document.querySelectorAll('.contentmain');
+            results.forEach((element) => {
+                element.style.display = 'none';
+            });
+            result.style.display = 'flex';
+        }
+
+        //S3からPDFを取得して表示
+        const pdfUrl = 'https://resume-for-hiring-interview.s3.amazonaws.com/dummy-rirekisho.pdf';
+        document.getElementById('pdfFrame').src = pdfUrl;
+
+    </script>
+</body>
+
+</html>
