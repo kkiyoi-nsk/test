@@ -176,6 +176,17 @@
         </div>
     </main>
 
+    <script>
+        function change(num) {
+            for (let i = 1; i <= 5; i++) {
+                if (i == num) {
+                    document.getElementById("result-" + i).style.display = "flex";
+                } else {
+                    document.getElementById("result-" + i).style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
