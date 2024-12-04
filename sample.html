@@ -175,22 +175,7 @@
             </p>
         </div>
     </main>
-    <script>
-        //ボタンを押すと表示を切り替える
-        function change(event) {
-            const result = document.getElementById('result-' + event);
-            const results = document.querySelectorAll('.contentmain');
-            results.forEach((element) => {
-                element.style.display = 'none';
-            });
-            result.style.display = 'flex';
-        }
 
-        //S3からPDFを取得して表示
-        const pdfUrl = 'https://resume-for-hiring-interview.s3.amazonaws.com/dummy-rirekisho.pdf';
-        document.getElementById('pdfFrame').src = pdfUrl;
-
-    </script>
 </body>
 
 </html>
